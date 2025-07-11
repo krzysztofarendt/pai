@@ -42,3 +42,7 @@ Specify a different model or API key:
 ```bash
 echo "Tell me a joke" | pai --model gpt-4 --api-key $OPENAI_API_KEY
 ```
+
+## What is it for?
+
+Well, I use it in Helix to send selected text as prompt to an LLM:
