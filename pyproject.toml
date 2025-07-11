@@ -1,7 +1,7 @@
 [project]
-name = "pai"
+name = "pipe-pai"
 version = "0.1.0"
-description = "pai is a simple command-line tool that allows you to interact with OpenAI models through Unix pipes"
+description = "pipe-pai is a simple command-line tool that allows you to interact with OpenAI models through Unix pipes"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

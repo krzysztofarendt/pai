@@ -1,18 +1,19 @@
-# pai
-pai is a simple command-line tool that allows you to interact with OpenAI models through Unix pipes.
+# pipe-pai
+pipe-pai is a simple command-line tool that allows you to interact with OpenAI models through Unix pipes.
+Use it like this: `... | pai` - hence the name "pipe-pie".
 
 ## Installation
 
 Install via pipx (recommended):
 
 ```bash
-pipx install pai
+pipx install pipe-pai
 ```
 
 Or with pip:
 
 ```bash
-pip install pai
+pip install pipe-pai
 ```
 
 Ensure your OpenAI API key is set in the environment:

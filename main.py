@@ -29,10 +29,14 @@ def main():
     if not args.api_key:
         parser.error("OpenAI API key must be provided via --api-key or OPENAI_API_KEY env var")
 
-    prompt = sys.stdin.read()
+    prompt = None
+    try:
+        prompt = sys.stdin.read()
+    except KeyboardInterrupt:
+        return
 
     if not prompt:
-        parser.error("No input prompt provided on stdin")
+        return
     try:
         response = client.responses.create(
             model=args.model,
