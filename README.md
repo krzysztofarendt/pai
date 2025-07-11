@@ -46,3 +46,5 @@ echo "Tell me a joke" | pai --model gpt-4 --api-key $OPENAI_API_KEY
 ## What is it for?
 
 Well, I use it in Helix to send selected text as prompt to an LLM:
+
+[Demo Video](https://github.com/user-attachments/assets/01ea4865-9a1d-4230-8362-587c78633de0)
