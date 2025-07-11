@@ -7,13 +7,20 @@ Use it like this: `... | pai` - hence the name "pipe-pie".
 Install via pipx (recommended):
 
 ```bash
-pipx install pipe-pai
+pipx install pipe-pai-tool
 ```
 
 Or with pip:
 
 ```bash
-pip install pipe-pai
+pip install pipe-pai-tool
+```
+
+Or locally:
+```
+git clone git@github.com:krzysztofarendt/pai.git
+cd pai
+pipx install .
 ```
 
 Ensure your OpenAI API key is set in the environment:
