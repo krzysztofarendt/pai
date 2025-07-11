@@ -1,0 +1,15 @@
+[project]
+name = "pai"
+version = "0.1.0"
+description = "pai is a simple command-line tool that allows you to interact with OpenAI models through Unix pipes"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "openai>=0.27.0",
+]
+[project.scripts]
+pai = "main:main"
+# Build system configuration for PEP 517
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
