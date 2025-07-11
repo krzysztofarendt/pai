@@ -36,7 +36,6 @@ def main():
     try:
         response = client.responses.create(
             model=args.model,
-            instructions="You are helping me to code. Provide short, technical answers.",
             input=prompt,
         )
         print(response.output_text)
