@@ -25,7 +25,6 @@ def main():
     )
     args = parser.parse_args()
 
-
     if not args.api_key:
         parser.error("OpenAI API key must be provided via --api-key or OPENAI_API_KEY env var")
 

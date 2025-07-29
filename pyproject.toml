@@ -1,15 +1,21 @@
 [project]
 name = "pipe-pai-tool"
-version = "0.1.1"
+version = "0.1.2"
 description = "pipe-pai is a simple command-line tool that allows you to interact with OpenAI models through Unix pipes"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "openai>=0.27.0",
+    "typer>=0.16.0",
 ]
 [project.scripts]
-pai = "main:main"
+pai = "pai.main:main"
 # Build system configuration for PEP 517
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.uv.workspace]
+members = [
+    "pai.egg-info",
+]
