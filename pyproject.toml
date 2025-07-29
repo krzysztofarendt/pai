@@ -9,7 +9,7 @@ dependencies = [
     "typer>=0.16.0",
 ]
 [project.scripts]
-pai = "pai.main:main"
+pai = "pai.main:app"
 # Build system configuration for PEP 517
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]

@@ -1,32 +1,30 @@
 import sys
 import os
-import argparse
 
 import openai
 from openai import OpenAI
 
+import typer
+
 
 client = OpenAI()
+app = typer.Typer()
 
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Pipe your prompt to an OpenAI model and receive the response."
-    )
-    parser.add_argument(
-        "-m", "--model",
-        help="OpenAI model to use",
-        default=os.getenv("PAI_MODEL", "gpt-4o-mini")
-    )
-    parser.add_argument(
-        "-k", "--api-key",
-        help="OpenAI API key (or set OPENAI_API_KEY)",
-        default=os.getenv("OPENAI_API_KEY")
-    )
-    args = parser.parse_args()
+@app.command()
+def pipe(
+    model: str = os.getenv("PAI_MODEL", "gpt-4o-mini"),
+    api_key: str | None = os.getenv("OPENAI_API_KEY"),
+):
+    """Pipe your prompt to an OpenAI model and receive the response.
 
-    if not args.api_key:
-        parser.error("OpenAI API key must be provided via --api-key or OPENAI_API_KEY env var")
+    Args:
+        model (str): OpenAI model to use
+        api_key (str): OpenAI API key (or set OPENAI_API_KEY)
+    """
+    if not api_key:
+        print("OpenAI API key must be provided via --api-key or OPENAI_API_KEY env var")
+        return
 
     prompt = None
     try:
@@ -38,7 +36,7 @@ def main():
         return
     try:
         response = client.responses.create(
-            model=args.model,
+            model=model,
             input=prompt,
         )
         print(response.output_text)
@@ -48,4 +46,4 @@ def main():
       pass
 
 if __name__ == "__main__":
-    main()
+    app()
