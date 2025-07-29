@@ -29,6 +29,12 @@ Ensure your OpenAI API key is set in the environment:
 export OPENAI_API_KEY="your_api_key_here"
 ```
 
+Optionally, set a default model using the PAI_MODEL environment variable:
+
+```bash
+export PAI_MODEL="gpt-4"
+```
+
 ## Usage
 
 Pipe a prompt to `pai` and receive the model's response on stdout:
@@ -37,8 +43,22 @@ Pipe a prompt to `pai` and receive the model's response on stdout:
 echo "Write a haiku about the sea" | pai
 ```
 
-Specify a different model or API key:
+Alternatively, specify a different model or API key:
 
 ```bash
 echo "Tell me a joke" | pai --model gpt-4 --api-key $OPENAI_API_KEY
 ```
+
+## Chat mode
+
+By default, `pai` runs in the pipe mode with no chat history.
+You can enter an interactive multi-turn chat by:
+```bash
+pai --chat
+> Write a poem about the moon
+
+--------------------
+<AI response displayed here>
+```
+
+To exit chat mode, send an empty prompt press ctrl+c or type `q`, `exit`, or `quit`.
